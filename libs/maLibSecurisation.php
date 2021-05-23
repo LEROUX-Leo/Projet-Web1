@@ -32,7 +32,7 @@ function verifUser($login,$password)
 		// OK : on crée les var. de session 
 		$_SESSION["pseudo"] = $login; 
 		$_SESSION["idUser"] = $idUser; 
-		$_SESSION["heureConnexion"] = date("H:i:s"); 
+		$_SESSION["heureConnexion"] = date("H")+2 . date(":i") ; 
 		$_SESSION["isAdmin"] = isAdmin($idUser);
 		$_SESSION["connecte"] = true;
 		return true; 

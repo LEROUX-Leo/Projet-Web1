@@ -1,6 +1,7 @@
 /* Sticky footer styles
 Style inspiré de http://www.bootstrapzero.com/bootstrap-template/sticky-footer 
 -------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 html,
 body {
@@ -14,6 +15,7 @@ body {
   background-color: #ececec;
   min-height: 100%;
   height: auto !important;
+  font-family: 'Montserrat', sans-serif;
   height: 100%;
   /* Negative indent footer by its height */
   margin: 0 auto -60px;
@@ -25,6 +27,7 @@ body {
 #footer {
   height: 60px;
   background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
   position: fixed;
   text-align: center;
   width: 100%;
@@ -68,7 +71,7 @@ th{
 }
 
 .container{
-  font-size: 20px;;
+  font-size: 20px;
 }
 
 select{
@@ -84,4 +87,65 @@ select{
   position: relative;
   width:150px;
   height: 50px;
+}
+
+
+.produit{
+  width: 275px;
+  height: 287px;
+  float: left;
+  margin: 5px;
+  border-radius: 5px;
+  font-size : 16px;
+  border:1px solid rgb(70,70,70);;
+  background-color : white;
+  color:rgb(70,70,70);
+}
+
+.top{	
+  height: 125px;
+  background-color:rgb(220,220,220);
+  border-radius: 5px 5px 0 0;
+  text-align:center;
+  position: relative;
+  border-bottom: rgb(220,220,220) 1px solid;
+}
+
+.nom{
+  padding-top:5px;
+  height: 25px;
+  background-color:white;
+  padding:5px 8px 0px 8px;
+}
+.nom:hover{
+  text-decoration:underline;
+}
+
+.gamme{
+  height: 30px;
+  background-color:white;
+  padding:5px 8px 0px 8px;
+}
+
+.description{
+  height: 75px;
+  background-color:white;
+  padding:0px 8px 0px 8px;
+}
+
+.note{
+  height: 30px;
+  border: rgb(220,220,220) 1px solid;
+  border-radius: 0 0 5px 5px;
+  padding-left:8px;
+  padding-top:3px;
+  color:#ec8c04;
+  background-color:rgb(230,230,230);
+}
+
+.imgProd{
+  width : 150px;
+  max-width : 300px;
+  height : 300px;
+  max-height : 125px;
 }

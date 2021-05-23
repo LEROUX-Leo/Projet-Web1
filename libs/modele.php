@@ -27,17 +27,27 @@ function isAdmin($idUser)
 }
 
 // Accueil :
-// Comparer un produit :
-// Produits comparés :
-// Blog :
-// Liste des sites :
-function listerSites(){
-	$SQL = "SELECT Name AS 'Nom des sites' 
-			FROM sites
-			order by Name ASC";
-
+function listerProduits(){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			order by P.nomProduit ASC";
 	return(parcoursRs(SQLSelect($SQL)));
 }
+
+// Liste des produits :
+function listerSites($type){
+	$SQL = "SELECT S.nomSite AS 'Nom des sites' 
+			FROM sites S, association_site A, types T
+			WHERE S.idSite = A.idSite
+			AND A.idType = T.id
+			AND T.Types = '$type'
+			order by S.nomSite ASC";
+	return(parcoursRs(SQLSelect($SQL)));
+}
+
+
+//messages :
 // Aides :
 // Admin : 
 

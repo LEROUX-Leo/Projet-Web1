@@ -181,39 +181,76 @@ function mkLiens($tabData,$champLabel, $champCible, $urlBase=false, $nomCible=""
 		echo $nextData[$champLabel]; 
 		echo "</a> <br />\n";
 	}
+}
 
-	// Pour tester, ajouter dans le template des conversations : 
-	// mkLiens($conversations,"theme","id","index.php?view=chat","idConv");
 
-	// produit une liste de liens (plus facile à styliser)
-	// A partir de données fournies dans un tableau associatif	
-	// Chaque lien pointe vers une url définie par le champ $champCible
+
+
+
+function mkLigne2($tabAsso,$listeChamps=false)
+{
 	
-	// SI urlBase n'est pas false, on utilise  l'url de base 
-	// (avec son point d'interrogation) à laquelle on ajoute le champ cible 
-	// dans la chaîne de requête, associé au paramètre $nomCible, après un '&' 
+	foreach ($tabAsso as $cle => $val){
+		
+		
+			
+			if($cle == "Nom du produit"){
+				echo"<div class='produit'>\n";
+			echo"<div class='top'>\n";
+				echo"<img class='imgProd' src='./produits/$val.png' alt='$val'>";
+			echo"</div>";
 
-	// Exemples d'appels : 
-	// mkLiens($conversations,"theme","id");
-	// produira <a href="1">Multimédia</a> ...
+			echo"<div class='nom'>";
+				echo"<a href='index.php?view=produits'><strong>$val</strong></a>";
+			echo"</div>";
+			}
+			
+			else if($cle == "Gamme"){
+			echo"<div class='gamme'>";
+				echo"<p><strong>$val</strong></p>";
+			echo"</div>";
+			}
+		
+			else if($cle == "Description du produit"){
+			echo"<div class='description'>";
+				echo"<p>$val</p>";
+			echo"</div>";
+			}
 
-	// mkLiens($conversations,"theme","id","index.php?view=chat","idConv");
-	// produira <a href="index.php?view=chat&idConv=1">Multimédia</a> ...
+		
+			else if($cle == "noteProduit"){
+				echo"<div class='note'>";
+				if($val == 0){
+					echo"<p>☆ ☆ ☆ ☆ ☆</p>";
+				}
+				else if($val == 1){
+					echo"<p>★ ☆ ☆ ☆ ☆</p>";
+				}
+				else if($val == 2){
+					echo"<p>★ ★ ☆ ☆ ☆</p>";
+				}
+				else if($val == 3){
+					echo"<p>★ ★ ★ ☆ ☆</p>";
+				}
+				else if($val == 4){
+					echo"<p>★ ★ ★ ★ ☆</p>";
+				}
+				else if($val == 5){
+					echo"<p>★ ★ ★ ★ ★</p>";
+				}
+			echo"</div>";
+		echo"</div>";
+			}	
+	}	
+}
 
+function mkProduit($tabData){
 
+	foreach ($tabData as $data){
+		mkLigne2($data);
+	}	
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

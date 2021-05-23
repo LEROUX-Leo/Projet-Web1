@@ -48,7 +48,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
         </button>
-		<img class='logo' src='./ressources/logo.png' alt='logo'>
+		<img class='logo' src='./ressources/logositeweb.jpg' alt='logo'>
 		<a class="navbar-brand" href="index.php?view=accueil"></a>
       </div>
       <div class="collapse navbar-collapse">
@@ -64,19 +64,14 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 				echo mkHeadLink("S'inscrire","inscription",$view); 
 
 			if (valider("connecte","SESSION"))
-				echo mkHeadLink("Comparer un produit","Comparer",$view); 
-
-			if (valider("connecte","SESSION"))
-				echo mkHeadLink("Produits comparés","Produits",$view);  
-
-			if (valider("connecte","SESSION"))
-				echo mkHeadLink("Blog","Blog",$view); 
-			
-			if (valider("connecte","SESSION"))
-				echo mkHeadLink("Liste de sites","liste_sites",$view);
+				echo mkHeadLink("Messages","messagerie",$view); 
 
 			if (valider("connecte","SESSION"))
 				echo mkHeadLink("Aides","aides",$view);	
+
+			if (valider("connecte","SESSION"))
+				echo mkHeadLink("produits","produits",$view);	
+
 
 			if (isAdmin(valider("idUser","SESSION")))
 				echo mkHeadLink("Administration","Admin",$view); 
