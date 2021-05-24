@@ -14,6 +14,6 @@ $BDD_base="testdb_<nom>";
 $BDD_host="localhost";
 $BDD_user="root";
 $BDD_password="WB64PTu8C1OxS2ox"; // vide sous windows
-$BDD_base="Comparateur2i";
+$BDD_base="Ceed";
 
 ?>

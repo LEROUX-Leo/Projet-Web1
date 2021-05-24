@@ -27,15 +27,70 @@ function isAdmin($idUser)
 }
 
 // Accueil :
-function listerProduits(){
+
+// Liste des produits :
+//6 FONCTIONS DE TRIS :
+//1
+function listerProduitsParNomASC(){
 	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
 			FROM produits P, gamme G
 			WHERE G.idGamme = P.gamme
 			order by P.nomProduit ASC";
 	return(parcoursRs(SQLSelect($SQL)));
 }
+//2
+function listerProduitsParNomDESC(){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			order by P.nomProduit DESC";
+	return(parcoursRs(SQLSelect($SQL)));
+}
 
-// Liste des produits :
+//3
+function listerProduitsParGammeASC(){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			order by P.gamme DESC";
+	return(parcoursRs(SQLSelect($SQL)));
+}
+//4
+function listerProduitsParGammeDESC(){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			order by P.gamme ASC";
+	return(parcoursRs(SQLSelect($SQL)));
+}
+
+//5
+function listerProduitsParNoteASC(){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			order by P.noteProduit ASC";
+	return(parcoursRs(SQLSelect($SQL)));
+}
+//6
+function listerProduitsParNoteDESC(){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			order by P.noteProduit DESC";
+	return(parcoursRs(SQLSelect($SQL)));
+}
+
+//Fonction de recherche : 
+function RechercherParNom($Nom){
+	$SQL = "SELECT P.nomProduit as 'Nom du produit', G.gamme as Gamme, P.description as 'Description du produit', P.noteProduit  
+			FROM produits P, gamme G
+			WHERE G.idGamme = P.gamme
+			AND nomProduit LIKE '$Nom%'";
+	return(parcoursRs(SQLSelect($SQL)));		
+}
+
+//Liste tous les sites
 function listerSites($type){
 	$SQL = "SELECT S.nomSite AS 'Nom des sites' 
 			FROM sites S, association_site A, types T

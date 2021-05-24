@@ -31,6 +31,7 @@ body {
   position: fixed;
   text-align: center;
   width: 100%;
+  display: block;
 }
 
 
@@ -92,7 +93,7 @@ select{
 
 .produit{
   width: 275px;
-  height: 287px;
+  height: 317px;
   float: left;
   margin: 5px;
   border-radius: 5px;
@@ -100,6 +101,7 @@ select{
   border:1px solid rgb(70,70,70);;
   background-color : white;
   color:rgb(70,70,70);
+  
 }
 
 .top{	
@@ -121,26 +123,42 @@ select{
   text-decoration:underline;
 }
 
-.gamme{
+.gamme1{
   height: 30px;
-  background-color:white;
+  background-color:rgb(238, 210, 199);
+  padding:5px 8px 0px 8px;
+}
+
+.gamme2{
+  height: 30px;
+  background-color:rgb(243, 233, 199);
+  padding:5px 8px 0px 8px;
+}
+
+.gamme3{
+  height: 30px;
+  background-color:rgb(211, 236, 190);
   padding:5px 8px 0px 8px;
 }
 
 .description{
-  height: 75px;
+  height: 95px;
   background-color:white;
   padding:0px 8px 0px 8px;
 }
 
+span{
+  padding-top: 50%;
+}
 .note{
-  height: 30px;
+  height: 40px;
   border: rgb(220,220,220) 1px solid;
   border-radius: 0 0 5px 5px;
   padding-left:8px;
   padding-top:3px;
   color:#ec8c04;
   background-color:rgb(230,230,230);
+  font-size: 25px;
 }
 
 .imgProd{
